@@ -9,7 +9,7 @@ x-environment:
 services:
   postgis:
     image: kartoza/postgis:16-3.4
-    container_name: postgis_arm-${{ENV_NAME}}
+    container_name: postgis_arm-$${{ENV_NAME}}
     env_file:
       - ../.env
     environment:
