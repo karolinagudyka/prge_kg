@@ -1,8 +1,8 @@
 x-environment:
   #DB
   - &env-postgres-db POSTGRES_DB=${POSTGRES_DB}
-  - &env-postgres-user POSTGRES_USER=$(POSTGRES_USER)
-  - &env-postgres-password POSTGRES_PASSWORD=$(POSTGRES_PASSWORD)
+  - &env-postgres-user POSTGRES_USER=${POSTGRES_USER}
+  - &env-postgres-password POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 
 
 
@@ -13,9 +13,9 @@ services:
     env_file:
       - ../.env
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      - *env-postgres-db
+      - *env-postgres-user
+      - *env-postgres-password
     ports:
       - ${POSTGRES_PORT}:5432
     volumes:
