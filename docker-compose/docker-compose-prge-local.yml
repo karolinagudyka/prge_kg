@@ -17,7 +17,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - "5444:5432"
+      - 5443:5432
     volumes:
       - postgis-local-data:/var/lib/postgresql/data
 
@@ -33,6 +33,17 @@ services:
     volumes:
       - ..:/tmp/data:/opt/geoserver_data
       - ..:/.tmp/geoserver-config:/opt/geoserver/data_dir
+
+
+  fastapi:
+    build:
+      context: ..
+      dockerfile: docker/fastapi/Dockerfile
+    image: 'prge_2025_fastapi'
+    container_name: 'prge_2025_fastapi'
+    ports:
+      - 10000:10000
+
 
 
 
