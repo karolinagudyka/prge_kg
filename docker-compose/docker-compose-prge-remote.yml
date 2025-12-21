@@ -8,6 +8,9 @@ x-environment:
 
 services:
   postgis:
+    build:
+      context: ..
+      dockerfile: docker/postgis/Dockerfile
     image: kartoza/postgis:16-3.4
     container_name: postgis_arm-${ENV_NAME}
     environment:
@@ -23,13 +26,13 @@ services:
     build:
       context: ..
       dockerfile: docker/geoserver/Dockerfile
-    image: 'prge_2025-geoserver'
-    container_name: prge_2025_geoserver-${ENV-NAME}
+    image: 'prge_2025_geoserver'
+    platform: linux/arm64/v8
+    container_name: prge_2025_geoserver-${ENV_NAME}
     ports:
       - ${GEOSERVER_PORT}:8080
     volumes:
-      - ..:/tmp/data:/opt/geoserver_data
-      - ..:/.tmp/geoserver-config:/opt/geoserver/data_dir
+      - ../.tmp/data-${ENV_NAME}:/opt/geoserver_data
 
 
 volumes:

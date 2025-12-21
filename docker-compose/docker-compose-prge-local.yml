@@ -1,21 +1,22 @@
 x-environment:
   #DB
   - &env-postgres-db POSTGRES_DB=${POSTGRES_DB}
-  - &env-postgres-user POSTGRES_USER=$(POSTGRES_USER)
-  - &env-postgres-password POSTGRES_PASSWORD=$(POSTGRES_PASSWORD)
+  - &env-postgres-user POSTGRES_USER=${POSTGRES_USER}
+  - &env-postgres-password POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 
 
 
 services:
   postgis:
+    build:
+      context: ..
+      dockerfile: docker/postgis/Dockerfile
     image: kartoza/postgis:16-3.4
     container_name: postgis_arm
-    env_file:
-      - ../.env
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      - *env-postgres-db
+      - *env-postgres-user
+      - *env-postgres-password
     ports:
       - 5443:5432
     volumes:
@@ -26,14 +27,14 @@ services:
     build:
       context: ..
       dockerfile: docker/geoserver/Dockerfile
-    image: 'prge_2025-geoserver'
+    image: 'prge_2025_geoserver'
+    platform: linux/arm64/v8
     container_name: 'prge_2025_geoserver'
     ports:
-      - "9000:8080"
+      - 9000:8080
     volumes:
-      - ..:/tmp/data:/opt/geoserver_data
-      - ..:/.tmp/geoserver-config:/opt/geoserver/data_dir
-
+      - ../.tmp/data:/opt/geoserver_data
+      - ../.tmp/geoserver-config:/opt/geoserver/data_dir
 
   fastapi:
     build:
@@ -41,6 +42,10 @@ services:
       dockerfile: docker/fastapi/Dockerfile
     image: 'prge_2025_fastapi'
     container_name: 'prge_2025_fastapi'
+    environment:
+      - *env-postgres-db
+      - *env-postgres-user
+      - *env-postgres-password
     ports:
       - 10000:10000
 
