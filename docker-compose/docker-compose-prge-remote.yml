@@ -27,8 +27,10 @@ services:
       context: ..
       dockerfile: docker/geoserver/Dockerfile
     image: 'prge_2025_geoserver'
-    platform: linux/amd64
     container_name: prge_2025_geoserver-${ENV_NAME}
+    environment:
+      - GEOSERVER_ADMIN_USER=admin
+      - GEOSERVER_ADMIN_PASSWORD=geoserver
     ports:
       - ${GEOSERVER_PORT}:8080
     volumes:
