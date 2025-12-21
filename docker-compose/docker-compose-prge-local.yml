@@ -28,7 +28,7 @@ services:
       context: ..
       dockerfile: docker/geoserver/Dockerfile
     image: 'prge_2025_geoserver'
-    platform: linux/arm64/v8
+    platform: linux/amd64
     container_name: 'prge_2025_geoserver'
     ports:
       - 9000:8080
