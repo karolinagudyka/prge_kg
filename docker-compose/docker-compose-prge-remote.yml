@@ -4,8 +4,6 @@ x-environment:
   - &env-postgres-user POSTGRES_USER=${POSTGRES_USER}
   - &env-postgres-password POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 
-
-
 services:
   postgis:
     build:
@@ -49,6 +47,6 @@ services:
     ports:
       - ${FASTAPI_PORT}:10000
 
-
 volumes:
   postgis-local-data:
+

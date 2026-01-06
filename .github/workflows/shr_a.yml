@@ -2,6 +2,7 @@ name: build and push and deploy
 on:
   push:
     branches:
+      - env-test
       - env-qa
       - main
 
