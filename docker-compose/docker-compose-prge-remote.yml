@@ -1,0 +1,52 @@
+x-environment:
+  #DB
+  - &env-postgres-db POSTGRES_DB=${POSTGRES_DB}
+  - &env-postgres-user POSTGRES_USER=${POSTGRES_USER}
+  - &env-postgres-password POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+services:
+  postgis:
+    build:
+      context: ..
+      dockerfile: docker/postgis/Dockerfile
+    image: kartoza/postgis:16-3.4
+    container_name: postgis_arm-${ENV_NAME}
+    environment:
+      - *env-postgres-db
+      - *env-postgres-user
+      - *env-postgres-password
+    ports:
+      - ${POSTGRES_PORT}:5432
+    volumes:
+      - postgis-local-data:/var/lib/postgresql/data
+
+  geoserver:
+    build:
+      context: ..
+      dockerfile: docker/geoserver/Dockerfile
+    image: 'prge_2025_geoserver'
+    container_name: prge_2025_geoserver-${ENV_NAME}
+    environment:
+      - GEOSERVER_ADMIN_USER=admin
+      - GEOSERVER_ADMIN_PASSWORD=geoserver
+    ports:
+      - ${GEOSERVER_PORT}:8080
+    volumes:
+      - ../.tmp/data-${ENV_NAME}:/opt/geoserver_data
+
+  fastapi:
+    build:
+      context: ..
+      dockerfile: docker/fastapi/Dockerfile
+    image: 'prge_2025_fastapi'
+    container_name: prge_2025_fastapi-${ENV_NAME}
+    environment:
+      - *env-postgres-db
+      - *env-postgres-user
+      - *env-postgres-password
+    ports:
+      - ${FASTAPI_PORT}:10000
+
+volumes:
+  postgis-local-data:
+
