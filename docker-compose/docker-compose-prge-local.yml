@@ -11,8 +11,8 @@ services:
     build:
       context: ..
       dockerfile: docker/postgis/Dockerfile
-    image: kartoza/postgis:16-3.4
-    container_name: postgis_arm
+    image: 'kartoza/postgis:16-3.4'
+    container_name: 'postgis_arm'
     environment:
       - *env-postgres-db
       - *env-postgres-user

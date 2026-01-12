@@ -16,6 +16,32 @@ function Services(props) {
 
     </div>
     );
+    return (<div>
+        <div>Services</div>
+        <Button
+            className="service__button"
+            variant="contained"
+            size="large"
+            component={Link}
+            to='/map'
+        >
+            PRZEJDŹ DO MAPY</Button>
+
+    </div>
+    );
+    return (<div>
+        <div>Services</div>
+        <Button
+            className="service__button"
+            variant="contained"
+            size="large"
+            component={Link}
+            to='/map'
+        >
+            PRZEJDŹ DO MAPY</Button>
+
+    </div>
+    );
 }
 
 export default Services;
