@@ -3,45 +3,40 @@ import {Button} from "@mui/material";
 import {Link} from "react-router-dom";
 
 function Services(props) {
-    return (<div>
+    return <div>
         <div>Services</div>
         <Button
-            className="service__button"
-            variant="contained"
-            size="large"
+            className='services__button'
+            variant='contained'
+            size='large'
             component={Link}
             to='/map'
         >
-            PRZEJDŹ DO MAPY</Button>
+            PRZEJDŹ DO MAPY
+        </Button>
 
-    </div>
-    );
-    return (<div>
-        <div>Services</div>
+
         <Button
-            className="service__button"
-            variant="contained"
-            size="large"
+            className='services__button'
+            variant='contained'
+            size='large'
             component={Link}
-            to='/map'
+            to='/list'
         >
-            PRZEJDŹ DO MAPY</Button>
+            PRZEJDŹ listy użytkowników
+        </Button>
 
-    </div>
-    );
-    return (<div>
-        <div>Services</div>
         <Button
-            className="service__button"
-            variant="contained"
-            size="large"
+            className='services__button'
+            variant='contained'
+            size='large'
             component={Link}
-            to='/map'
+            to='/newuser'
         >
-            PRZEJDŹ DO MAPY</Button>
-
+            Dodaj nowego użytkownika
+        </Button>
     </div>
-    );
+
 }
 
 export default Services;
