@@ -13,8 +13,6 @@ function ListOfItems(props) {
                 console.log(res);
                 setUsers(res)
             })
-
-        console.log('działa', users)
     }, [])
 
 
