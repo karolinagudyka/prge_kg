@@ -12,7 +12,7 @@ services:
       context: ..
       dockerfile: docker/postgis/Dockerfile
     image: 'kartoza/postgis:16-3.4'
-    container_name: 'postgis_arm'
+    container_name: 'postgis'
     environment:
       - *env-postgres-db
       - *env-postgres-user
@@ -66,6 +66,15 @@ services:
     environment:
       - CHOCKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true
+
+  nginx:
+    build:
+      context: ..
+      dockerfile: docker/nginx/Dockerfile_local
+    image: 'prge_2025_nginx'
+    container_name: 'prge_2025_nginx'
+    ports:
+      - 8090:80
 
 
 volumes:
