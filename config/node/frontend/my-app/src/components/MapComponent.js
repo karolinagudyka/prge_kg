@@ -5,6 +5,7 @@ import OSM from 'ol/source/OSM'
 import View from 'ol/View';
 import {useGeographic} from "ol/proj";
 import 'ol/ol.css';
+import {TileWMS} from 'ol/source';
 
 
 function MapComponent(props) {
@@ -18,7 +19,29 @@ function MapComponent(props) {
             layers: [
                 new TitleLayer({
                     source: new OSM(),
-                })
+                }),
+                new TitleLayer({
+                    source: new TileWMS({
+                        url: "http://localhost:9000/geoserver/prge/wms?",
+                        params: {
+                            "LAYERS": "prge:Jednostki podziału administracyjnego",
+                            "TITLED": true
+                        },
+                        serverType: "geoserver",
+                        transition: 0
+                    })
+                }),
+                new TitleLayer({
+                    source: new TileWMS({
+                        url: "http://localhost:9000/geoserver/prge/wms?",
+                        params: {
+                            "LAYERS": "prge:Budynki",
+                            "TITLED": true
+                        },
+                        serverType: "geoserver",
+                        transition: 0
+                    })
+                }),
             ],
             view: new View({
                 center: [21,52],
