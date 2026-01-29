@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import UserCard from "../components/UserCard";
 import {
   Table, TableBody, TableCell, TableContainer,
   TableHead, TableRow, Paper} from "@mui/material";
