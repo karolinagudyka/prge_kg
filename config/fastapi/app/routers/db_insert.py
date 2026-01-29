@@ -32,7 +32,7 @@ async def insert_user(user: UserData):
 
         sql_query = text("""
                          insert into users (name, posts, location)
-                         values (:name, :posts, :location); \
+                         values (:name, :posts, :location);
                          """)
 
         with db_connection.connect() as conn:

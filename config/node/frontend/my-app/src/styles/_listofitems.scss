@@ -1,0 +1,95 @@
+.list-page {
+  width: 100vw;
+  height: 100vh;
+  background: #BEBEBE;
+  background-image: url('../assets/map.png');
+  background-size: cover;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  .list-header {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: #0A1A5E;
+    font-size: 85px;
+    font-weight: 700;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 1px;
+    margin-top: 100px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  }
+  .services__subtitle {
+    position: absolute;
+    top: 70px;       // wysokość nad głównym tytułem
+    left: 360px;      // wyrównanie do lewej jak w Figma
+    font-family: 'Manrope', sans-serif;
+    font-size: 48px; // trochę mniejszy niż główny tytuł
+    font-weight: 300;
+    letter-spacing: 2px;
+    display: flex;
+    gap: 8px;
+    text-transform: uppercase;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .geo-portal {
+    color: #ECD4D4; // różowawy
+  }
+
+  .portal {
+    color: #FFFFFF; // biały
+  }
+
+  .table-wrapper {
+    width: 80%;
+    margin-top: 40px;
+  }
+
+  .table-container {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+  }
+  .table-container {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    font-family: 'Manrope', sans-serif !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+
+    table {
+      font-family: 'Manrope', sans-serif !important;
+    }
+
+    th {
+      background-color: #EDBCC5;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      font-size: 16px;
+      color: #2A2A2A;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: #FFFFFF; // pastelowy róż (jak Twoje #ECD4D4)
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #FDF4F6; // trochę ciemniejszy pastel
+    }
+
+    tbody tr:hover {
+      background-color: #D8B3C0; // delikatny hover
+      transition: 0.2s ease;
+    }
+}
+}

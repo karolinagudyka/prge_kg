@@ -3,6 +3,7 @@ import UserCard from "../components/UserCard";
 import {
   Table, TableBody, TableCell, TableContainer,
   TableHead, TableRow, Paper} from "@mui/material";
+import "../styles/_listofitems.scss";
 
 
 function ListOfItems(props) {
@@ -22,6 +23,10 @@ function ListOfItems(props) {
 
     return (
         <div className="list-page">
+            <div className="services__subtitle">
+              <span className="geo-portal">GEO</span>
+              <span className="portal">PORTAL</span>
+            </div>
 
       <header className="list-header">
         Lista pracowników jednostek policji
