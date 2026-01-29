@@ -5,7 +5,6 @@ import '../styles/_services.scss';
 import komisariat from '../assets/komisariat.jpg';
 import mapa from '../assets/mapa.png';
 import button from '../assets/button.png';
-import police from '../assets/police.jpg';
 
 function Services() {
     return (
