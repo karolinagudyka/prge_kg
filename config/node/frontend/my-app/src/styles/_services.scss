@@ -1,0 +1,161 @@
+.services {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: #BEBEBE;
+  overflow: hidden;
+
+  .services__header {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url('../assets/map_services.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 60px;
+
+  }
+
+
+
+  .services__content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;        // odstęp między kartami
+    margin-top: 40px; // odsunięcie od nagłówka
+
+
+  }
+
+
+  .services__title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Manrope', sans-serif;
+    max-width: 350px;
+    margin-left: 200px;
+
+    .title {
+      font-size: 60px;
+      font-weight: 200;
+
+      span {
+        letter-spacing: 2px;
+      }
+    }
+
+    .subtitle {
+      font-size: 80px;
+      font-weight: 400;
+      margin-top: -10px;
+
+      span {
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .geo-portal {
+    color: #ECD4D4;
+  }
+
+  .portal {
+    color: #FFFFFF;
+  }
+
+  .geo-services {
+    color: #100C8F;
+  }
+
+  .services-text {
+    color: #FFFFFF;
+  }
+  .card {
+    position: relative;
+    width: 550px;
+    height: 600px;
+    background: rgba(217, 217, 217, 0.5);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background-color: #ECD4D4;
+      z-index: 10;
+    }
+
+  }
+  .card__content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .card__top {
+    padding: 24px;
+    height: 160px; // stała wysokość, możesz dopasować
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card__image {
+    width: 100%;
+    flex-grow: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .card__description {
+    font-family: 'Manrope', sans-serif;
+    font-size: 30px;
+    color: #ffffff;
+  }
+
+
+
+  .custom__button--styled {
+    width: 150px;
+    height: 65px;
+    background: #ECD4D4 !important;
+    border-radius: 100px !important;
+    box-shadow:
+      0px 4px 8px 3px rgba(0, 0, 0, 0.15),
+      0px 1px 3px rgba(0, 0, 0, 0.3);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 600;
+    font-size: 16px;
+    color: #4F0704 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: none; // usuwa wielkie litery z MUI
+  }
+  .custom__button-icon {
+    width: 33px;
+    height: 33px;
+    border: 1.6px solid #84707A;
+    border-radius: 50%;
+  }
+  .custom__button-text {
+    line-height: 19px;
+  }
+}

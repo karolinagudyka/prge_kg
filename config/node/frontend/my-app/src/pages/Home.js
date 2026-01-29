@@ -9,7 +9,8 @@
     <div className="home">
       <div className="home__left">
           <h1 className="home__title">
-              <span className="geo">GEO</span><span className="portal">PORTAL</span>
+              <span className="geo">GEO</span>
+              <span className="portal">PORTAL</span>
           </h1>
           <Typography className="home__subtitle">
               Geoportal tematyczny poświęcony policji
