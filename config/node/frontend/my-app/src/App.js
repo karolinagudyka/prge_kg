@@ -1,7 +1,7 @@
 import './styles/style.scss';
 
 import {Suspense} from "react";
-import {RouterProvider} from "react-router/dom";
+import {RouterProvider} from "react-router-dom";
 import {CircularProgress} from '@mui/material';
 import routes from "./routes/Router"
 
