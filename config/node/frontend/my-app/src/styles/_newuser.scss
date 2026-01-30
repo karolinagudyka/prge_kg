@@ -1,0 +1,37 @@
+.newuser {
+  width: 100vw;
+  height: 100vh;
+  background: #BEBEBE;
+  background-image: url('../assets/map.png');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  .newuser__card {
+    background: rgba(236, 212, 212, 0.70);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(4px);
+  }
+  .custom__button--styled {
+    width: 250px;
+    height: 65px;
+    margin: 20px auto 0;
+    background: #ECD4D4;
+    border-radius: 100px;
+    box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
+    0px 1px 3px rgba(0, 0, 0, 0.3);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #4F0704;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .custom__button-text {
+    line-height: 19px;
+  }
+}

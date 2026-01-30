@@ -21,17 +21,14 @@ function UserCard({user}) {
                     title={user.name}
                     subheader={user.location}
                 />
-
                 <CardContent>
                     <Typography variant="body2" sx={{color: 'text.secondary'}}>
                         Twój znajomy {user.name} opublikował {user.id} postów.
                     </Typography>
                 </CardContent>
-
-
             </Card>
         </div>
     );
 }
-
 export default UserCard;
+
